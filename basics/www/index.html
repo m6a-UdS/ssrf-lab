@@ -17,7 +17,7 @@
 			<header id="header" class="alt">
 				<div class="inner">
 					<h1>My Super Popular App</h1>
-					<p>Absolutely not vulnerable to SSRF attacks described <a href="https://medium.com/poka-techblog">HERE</a></p>
+					<p>Definitely not vulnerable to SSRF attacks described <a href="https://medium.com/poka-techblog">HERE</a></p>
 				</div>
 			</header>
 
@@ -28,14 +28,14 @@
 					<section id="intro" class="main">
 						<span class="icon fa-rocket major"></span>
 						<h2>Outgoing Webhook</h2>
-						<p>Since we are so big, we have a new WebHook feature!</p>
+						<p>Since we are so <strong>BIG</strong> and <strong>POPULAR</strong>, we have a new WebHook feature!</p>
                         <p>We will send updates to your app whenever an event happens. You can test your Webhook handler here:</p>
-                      <form action="testhook.php"/>
+                      <form action="testhook.php" action="GET"/>
                         <p>
                           <input type="text" placeholder="https://yourhandler.io/events" style="width:100%"></input>
                         </p>
 						<ul class="actions">
-							<li><a href="#" class="button big">Test it!</a></li>
+                            <li><input type="submit" class="button big" value="Test it!" /></li>
 						</ul>
                       </form>
 					</section>
