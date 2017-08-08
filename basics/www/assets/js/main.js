@@ -55,7 +55,20 @@
 					$img.remove();
 
 			});
-
 	});
 
 })(jQuery);
+$("#hook").submit(
+    function(event){
+        $.ajax({
+          type: 'GET',
+          url: $("#hook").attr("action"),
+          data: $("form").serialize(),
+          success: function(response) { 
+            $("#result").text(response);
+          },
+        });
+        event.preventDefault();
+    }
+);
+
