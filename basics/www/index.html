@@ -32,7 +32,7 @@
                         <p>We will send updates to your app whenever an event happens. You can test your Webhook handler here:</p>
                       <form id="hook" action="testhook.php">
                         <p>
-                          <input type="text" placeholder="https://yourhandler.io/events" style="width:100%" />
+                          <input type="text" name="handler" placeholder="https://yourhandler.io/events" style="width:100%" />
                         </p>
 						<ul class="actions">
                             <li><input type="submit" class="button big" value="Test it!" /></li>
@@ -43,7 +43,7 @@
 					<section id="intro" class="main">
 						<span class="icon fa-eye major"></span>
 						<h2>See the result!</h2>
-						<p id="result">Check how your handler responded; The result of your test will appear here</p>
+						<p id="result" style="overflow: auto;max-height: 600px;">Check how your handler responded; The result of your test will appear here</p>
 					</section>
 
 				<!-- Footer -->

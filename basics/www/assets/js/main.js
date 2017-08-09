@@ -61,9 +61,9 @@
 $("#hook").submit(
     function(event){
         $.ajax({
-          type: 'GET',
+          type: 'POST',
           url: $("#hook").attr("action"),
-          data: $("form").serialize(),
+          data: $("#hook").serialize(),
           success: function(response) { 
             $("#result").text(response);
           },
