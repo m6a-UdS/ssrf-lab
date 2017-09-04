@@ -1,0 +1,21 @@
+version: '2'
+services:
+  web:
+    build: webserver/
+    ports:
+      - "8000:80"
+    networks:
+      ssrf:
+        ipv4_address: 10.0.0.2
+  secret:
+    build: secretserver/
+    networks:
+      ssrf:
+        ipv4_address: 10.0.0.3
+networks:
+  ssrf:
+    ipam:
+      config:
+        - subnet: 10.0.0.0/8
+          gateway: 10.0.0.1
+          
