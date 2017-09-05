@@ -12,26 +12,25 @@ RUN apt-get autoremove
 RUN rm -rf /var/lib/apt/lists/*
 
 # Copy over and install the requirements
-COPY ./app/requirements.txt /var/www/apache-flask/app/requirements.txt
-RUN pip install -r /var/www/apache-flask/app/requirements.txt
+COPY ./backend/requirements.txt /requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r /requirements.txt
 
 # Copy over the apache configuration file and enable the site
-COPY ./apache-flask.conf /etc/apache2/sites-available/apache-flask.conf
-RUN a2ensite apache-flask
+COPY ./ssrf-app.conf /etc/apache2/sites-available/ssrf-app.conf
+RUN a2ensite ssrf-app
 RUN a2enmod headers
 
 # Copy over the wsgi file
-COPY ./apache-flask.wsgi /var/www/apache-flask/apache-flask.wsgi
-
-COPY ./run.py /var/www/apache-flask/run.py
-COPY ./app /var/www/apache-flask/app/
+COPY ./backend/SSRFApp.wsgi /var/www/SSRFApp/SSRFApp.wsgi
+COPY ./backend/ssrf_app /var/www/SSRFApp/ssrf_app/
 
 RUN a2dissite 000-default.conf
-RUN a2ensite apache-flask.conf
+RUN a2ensite ssrf-app.conf
 
 EXPOSE 80
 
-WORKDIR /var/www/apache-flask
+WORKDIR /var/www/SSRFApp
 
 # CMD ["/bin/bash"]
 CMD  /usr/sbin/apache2ctl -D FOREGROUND
