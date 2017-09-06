@@ -12,7 +12,7 @@ RUN apt-get autoremove
 RUN rm -rf /var/lib/apt/lists/*
 
 # Copy over and install the requirements
-COPY ./backend/requirements.txt /requirements.txt
+COPY ./requirements.txt /requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r /requirements.txt
 
@@ -22,8 +22,8 @@ RUN a2ensite ssrf-app
 RUN a2enmod headers
 
 # Copy over the wsgi file
+COPY ./backend/SSRFApp/ /var/www/SSRFApp/SSRFApp/
 COPY ./backend/SSRFApp.wsgi /var/www/SSRFApp/SSRFApp.wsgi
-COPY ./backend/ssrf_app /var/www/SSRFApp/ssrf_app/
 
 RUN a2dissite 000-default.conf
 RUN a2ensite ssrf-app.conf
