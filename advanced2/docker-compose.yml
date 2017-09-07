@@ -1,13 +1,13 @@
 version: '2'
 services:
   web:
-    build: webserver/
+    build: flask-webserver/
     ports:
-      - "8000:80"
+      - "8001:80"
     networks:
       ssrf:
         ipv4_address: 10.0.0.2
-  secret:
+  secret.corp:
     build: secretserver/
     networks:
       ssrf:
@@ -18,4 +18,3 @@ networks:
       config:
         - subnet: 10.0.0.0/8
           gateway: 10.0.0.1
-          

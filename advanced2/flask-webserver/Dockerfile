@@ -24,6 +24,7 @@ RUN a2enmod headers
 # Copy over the wsgi file
 COPY ./backend/SSRFApp/ /var/www/SSRFApp/SSRFApp/
 COPY ./backend/SSRFApp.wsgi /var/www/SSRFApp/SSRFApp.wsgi
+COPY ./frontend/ /var/www/html
 
 RUN a2dissite 000-default.conf
 RUN a2ensite ssrf-app.conf
