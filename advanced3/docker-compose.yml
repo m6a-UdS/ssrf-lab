@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    build: flask-webserver/
+    ports:
+      - "8001:80"
+    networks:
+      ssrf:
+        ipv4_address: 10.0.0.2
+  mail.corp:
+    build: mailserver/
+    networks:
+      ssrf:
+        ipv4_address: 10.0.0.4
+networks:
+  ssrf:
+    ipam:
+      config:
+        - subnet: 10.0.0.0/8
+          gateway: 10.0.0.1
