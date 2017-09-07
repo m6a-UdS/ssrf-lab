@@ -1,17 +1,18 @@
-import urllib2
 import urllib
-import requests
+import urlparse
 from flask import Flask
+from flask import request
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def index():
-    return 'Hello world!'
-
-@app.route('/testhook/', methods=['POST'])
-def hook():
-    return 'My internal (ie: secured) Flask service!\nOnly accessible from 10.0.0.0/8!'
+    url=request.form['handler']
+    host = urlparse.urlparse(url).hostname
+    if host == 'secret.corp':
+        return 'Restricted Area!'
+    else:
+        return urllib.urlopen(url).read()
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80, debug=True)
+    app.run(host="0.0.0.0", port=80)

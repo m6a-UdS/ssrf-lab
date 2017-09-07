@@ -33,9 +33,4 @@ EXPOSE 80
 
 WORKDIR /var/www/SSRFApp
 
-# CMD ["/bin/bash"]
 CMD  /usr/sbin/apache2ctl -D FOREGROUND
-# The commands below get apache running but there are issues accessing it online
-# The port is only available if you go to another port first
-# ENTRYPOINT ["/sbin/init"]
-# CMD ["/usr/sbin/apache2ctl"]
