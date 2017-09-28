@@ -1,0 +1,31 @@
+version: '2'
+services:
+  web:
+    build:
+      context: flask-webserver/
+      args:
+        - FLAG1=${FLAG1}
+    ports:
+      - "8001:80"
+    networks:
+      ssrf:
+        ipv4_address: 10.0.0.110
+  secret1.corp:
+    environment:
+      - FLAG2=${FLAG2}
+    build: secretserver1/
+    networks:
+      ssrf:
+        ipv4_address: 10.0.0.38
+  secret2.corp:
+    environment:
+      - FLAG3=${FLAG3}
+    build: secretserver2/
+    networks:
+      - ssrf
+networks:
+  ssrf:
+    ipam:
+      config:
+        - subnet: 10.0.0.0/8
+          gateway: 10.0.0.1

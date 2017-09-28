@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<!--
+	Epilogue by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>SSRF - Advanced 2</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="inner">
+					<h1>My Super Popular App</h1>
+					<p>Hardened against SSRF attacks described in <a href="https://medium.com/poka-techblog/server-side-request-forgery-ssrf-attacks-part-1-the-basics-a42ba5cc244a">Part 1</a> and <a href="https://medium.com/poka-techblog/server-side-request-forgery-ssrf-attacks-part-2-fun-with-ipv4-addresses-eb51971e476d">Part 2</a></p>
+				</div>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Banner -->
+					<section id="intro" class="main">
+						<span class="icon fa-rocket major"></span>
+						<h2>Outgoing Webhook</h2>
+						<p>Since we are so <strong>BIG</strong> and <strong>POPULAR</strong>, we have a new WebHook feature!</p>
+                        <p>We will send updates to your app whenever an event happens. You can test your Webhook handler here; The response will appear below.</p>
+                      <form id="hook" action="/backend/">
+                        <p>
+                          <input type="text" name="handler" placeholder="https://yourhandler.io/events" style="width:100%" />
+                        </p>
+						<ul class="actions">
+                            <li><input type="submit" class="button big" value="Test it!" /></li>
+						</ul>
+                      </form>
+					</section>
+
+					<section id="intro" class="main">
+						<span class="icon fa-eye major"></span>
+						<h2>See the result!</h2>
+						<p id="result" style="overflow: auto;max-height: 600px;white-space: pre-line; border: 1px black solid; border-radius: 5px;">Check how your handler responded; The result of your test will appear here</p>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
