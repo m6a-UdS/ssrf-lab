@@ -7,7 +7,7 @@ RUN apt-get install -y apache2 \
     python \
     python-dev \
     python-pip
-RUN apt-get install -y telnet
+RUN apt-get install -y wget
 RUN apt-get clean
 RUN apt-get autoremove
 RUN rm -rf /var/lib/apt/lists/*
