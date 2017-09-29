@@ -16,8 +16,8 @@
 		<!-- Header -->
 			<header id="header" class="alt">
 				<div class="inner">
-					<h1>My Super Popular App</h1>
-					<p>Hardened against SSRF attacks described in <a href="https://medium.com/poka-techblog/server-side-request-forgery-ssrf-attacks-part-1-the-basics-a42ba5cc244a">Part 1</a> and <a href="https://medium.com/poka-techblog/server-side-request-forgery-ssrf-attacks-part-2-fun-with-ipv4-addresses-eb51971e476d">Part 2</a></p>
+					<h1>My Super Popular CTF App</h1>
+					<p>Hardened against SSRF attacks described in <a href="https://medium.com/poka-techblog/server-side-request-forgery-ssrf-attacks-part-1-the-basics-a42ba5cc244a">here</a>, <a href="https://medium.com/poka-techblog/server-side-request-forgery-ssrf-attacks-part-2-fun-with-ipv4-addresses-eb51971e476d">here</a> and <a href="https://medium.com/poka-techblog/server-side-request-forgery-ssrf-part-3-other-advanced-techniques-3f48cbcad27e">here</a></p>
 				</div>
 			</header>
 
@@ -26,21 +26,29 @@
 
 				<!-- Banner -->
 					<section id="intro" class="main">
+					  <h2>Instructions</h2>
+						<p style="text-align: left">This is an open-source CTF! You can view the code&nbsp;&nbsp;<a href="https://github.com/m6a-UdS/ssrf-lab/tree/master/ctf"><span class="icon fa-github"></span>&nbsp;here!</a></p>
+						<p style="text-align: left"><strong>Flag 1: </strong>Get it from http://secret1.corp</p>
+            <p style="text-align: left"><strong>Flag 2: </strong>Get it from this server's /etc/passwd file</p>
+						<p style="text-align: left"><strong>Flag 3: </strong>Get it from http://secret2.corp. It's IP address is 10.0.0.38</p>
+						<p style="text-align: left"><strong>Flag 4: </strong>Get it from http://secret3.corp. We don't know it's IP address</p>
+						<p style="text-align: left"><strong>Flag 5: </strong>This is an Amazon AWS infrastructure. Can-you access the EC2's UserData via the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata service?</a></p>
+						<p style="text-align: left">Hints are available on the blog posts in this page's header</p>
+						<p style="text-align: left">This server's hardening code is <a href="https://github.com/m6a-UdS/ssrf-lab/blob/master/ctf/flask-webserver/backend/SSRFApp/__init__.py">here</a></p>
+						<hr />
 						<span class="icon fa-rocket major"></span>
 						<h2>Outgoing Webhook</h2>
 						<p>Since we are so <strong>BIG</strong> and <strong>POPULAR</strong>, we have a new WebHook feature!</p>
-                        <p>We will send updates to your app whenever an event happens. You can test your Webhook handler here; The response will appear below.</p>
-                      <form id="hook" action="/backend/">
-                        <p>
-                          <input type="text" name="handler" placeholder="https://yourhandler.io/events" style="width:100%" />
-                        </p>
-						<ul class="actions">
-                            <li><input type="submit" class="button big" value="Test it!" /></li>
-						</ul>
-                      </form>
-					</section>
-
-					<section id="intro" class="main">
+            <p>We will send updates to your app whenever an event happens. You can test your Webhook handler here; The response will appear below.</p>
+            <form id="hook" action="/backend/">
+              <p>
+                <input type="text" name="handler" placeholder="https://yourhandler.io/events" style="width:100%" />
+              </p>
+							<ul class="actions">
+              	<li><input type="submit" class="button big" value="Test it!" /></li>
+							</ul>
+            </form>
+						<hr />
 						<span class="icon fa-eye major"></span>
 						<h2>See the result!</h2>
 						<p id="result" style="overflow: auto;max-height: 600px;white-space: pre-line; border: 1px black solid; border-radius: 5px;">Check how your handler responded; The result of your test will appear here</p>

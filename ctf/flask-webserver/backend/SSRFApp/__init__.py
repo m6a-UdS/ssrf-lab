@@ -11,11 +11,11 @@ def index():
     url=request.form['handler']
     host = urlparse.urlparse(url).hostname
     #FLAG 2
-    if '10.0.0.38' in url:
-        return 'Restricted Area!'
+    if '10.0.0.38' in url or 'secret2.corp' in url:
+        return 'FLAG2 - Restricted Area!'
     #FLAG 3
-    if host == 'secret2.corp':
-        return 'Restricted Area!'
+    if host == 'secret3.corp':
+        return 'FLAG3 - Restricted Area!'
     else:
         return urllib.urlopen(url).read()
 

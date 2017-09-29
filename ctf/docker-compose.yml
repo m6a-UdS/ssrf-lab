@@ -16,13 +16,21 @@ services:
     build: secretserver1/
     networks:
       ssrf:
-        ipv4_address: 10.0.0.38
+        ipv4_address: 10.0.0.15
   secret2.corp:
     environment:
       - FLAG3=${FLAG3}
     build: secretserver2/
     networks:
-      - ssrf
+      ssrf:
+        ipv4_address: 10.0.0.38
+  secret3.corp:
+    environment:
+      - FLAG4=${FLAG4}
+    build: secretserver3/
+    networks:
+      ssrf:
+        ipv4_address: ${SECRETSERVER_IP}
 networks:
   ssrf:
     ipam:
