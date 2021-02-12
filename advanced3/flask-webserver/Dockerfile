@@ -14,7 +14,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 # Copy over and install the requirements
 COPY ./requirements.txt /requirements.txt
-RUN pip install --upgrade pip
+RUN pip install --upgrade "pip < 21.0"
 RUN pip install -r /requirements.txt
 
 # Copy over the apache configuration file and enable the site
